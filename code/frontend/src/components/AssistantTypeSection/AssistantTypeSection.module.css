@@ -38,7 +38,7 @@
 }
 
 .dataText {
-    background: linear-gradient(90deg, #464FEB 10.42%, #8330E9 100%);
+    background: linear-gradient(90deg, #F7972E 10.42%, #FFB86D 100%);
     color: transparent;
     background-clip: text;
 }
@@ -53,7 +53,7 @@
 
   .loadingIcon {
     border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
+    border-top: 8px solid #F7972E; /* Blue */
     border-radius: 50%;
     width: 50px;
     height: 50px;
