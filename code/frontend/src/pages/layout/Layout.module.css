@@ -17,13 +17,14 @@ body {
 }
 
 .header {
-    background-color: #f2f2f2;
+    background-color: radial-gradient(108.78% 108.78% at 50.02% 19.78%, #FFFFFF 57.29%, #EEF6FE 100%);
 }
 
 .headerContainer {
     display: flex;
     justify-content: left;
     align-items: center;
+    margin-top: 20px;
 }
 
 .headerTitleContainer {
@@ -34,19 +35,18 @@ body {
 }
 
 .headerTitle {
-    font-family: "Segoe UI";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
     line-height: 28px;
     display: flex;
     align-items: flex-end;
-    color: #242424;
+    color: #3c3c3c;
 }
 
 .headerIcon {
-    height: 24px;
-    width: 24px;
+    height: 65px;
+    width: 65px;
     margin-left: 36px;
 }
 
@@ -56,15 +56,19 @@ body {
     justify-content: center;
     align-items: center;
     padding: 5px 12px;
-    gap: 4px;
-    width: 86px;
-    height: 32px;
-    background: radial-gradient(109.81% 107.82% at 100.1% 90.19%, #0F6CBD 33.63%, #2D87C3 70.31%, #8DDDD8 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-    border-radius: 4px;
+    gap: 8px;
+    width: 120px;
+    height: 40px;
+    border: .5px solid #bdbdbd;
+    border-radius: 50px;
     flex: none;
     order: 1;
     flex-grow: 0;
     cursor: pointer;
+}
+
+.shareButtonContainer:hover{
+    background-color: #f8f8f8;
 }
 
 .layoutRightButtons {
@@ -74,62 +78,63 @@ body {
 }
 
 .shareButton {
-    color: #FFFFFF;
+    color: #3c3c3c;
+    font-size: 1.5em;
 }
 
 .shareButtonText {
-    font-family: "Segoe UI";
+    font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    color: #FFFFFF;
+    color: #000;
 }
 
 .urlTextBox {
-    font-family: "Segoe UI";
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
-    color: #707070;
-    border: 1px solid #D1D1D1;
-    border-radius: 4px;
 }
 
 .copyButtonContainer {
     box-sizing: border-box;
+    font-family: "Poppins";
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 5px 12px;
+    padding: 10px 12px;
     gap: 4px;
-    background: #FFFFFF;
-    border: 1px solid #D1D1D1;
-    border-radius: 4px;
+    background: #242424;
+    border-radius: 20px;
 }
 
 .copyButtonContainer:hover {
     cursor: pointer;
-    background: #D1D1D1;
+    background: #3d3d3d;
 }
 
 .copyButton {
-    color: #424242;
+    color: #fff;
+    transform: rotate(-45deg);
+    width: 20px;
+    height: 20px;
 }
 
 .copyButtonText {
-    font-family: "Segoe UI";
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    color: #242424;
+    color: #fff;
 }
 
 .chatEmptyState {

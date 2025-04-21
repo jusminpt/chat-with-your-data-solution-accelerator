@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import styles from "./Layout.module.css";
 import Azure from "../../assets/Azure.svg";
+import KPW from "../../assets/kpw-logo.png";
 import {
-  CopyRegular,
+  LinkFilled,
   ShareRegular,
   ShieldLockRegular,
 } from "@fluentui/react-icons";
+import { BiUpload } from "react-icons/bi";
 import { Dialog, Stack, TextField } from "@fluentui/react";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { HistoryButton } from "../../components/HistoryButton/HistoryButton";
@@ -78,13 +80,13 @@ const Layout = ({ children,toggleSpinner, ...props }: LayoutProps) => {
         <div className={styles.headerContainer}>
           <Stack horizontal verticalAlign="center">
             <img
-              src={Azure}
+              src={KPW}
               className={styles.headerIcon}
               aria-hidden="true"
-              alt="Chat with your data"
+              alt="KPW ASSISTANT"
             />
             <Link to="/" className={styles.headerTitleContainer}>
-              <h3 className={styles.headerTitle}>Chat with your data</h3>
+              <h3 className={styles.headerTitle}>KPW ASSISTANT</h3>
             </Link>
             <Stack horizontal className={styles.layoutRightButtons}>
               {!showAuthMessage && showHistoryBtn && (
@@ -103,7 +105,7 @@ const Layout = ({ children,toggleSpinner, ...props }: LayoutProps) => {
                   e.key === "Enter" || e.key === " " ? handleShareClick() : null
                 }
               >
-                <ShareRegular className={styles.shareButton} />
+                <BiUpload className={styles.shareButton} />
                 <span className={styles.shareButtonText}>Share</span>
               </div>
             </Stack>
@@ -161,30 +163,51 @@ const Layout = ({ children,toggleSpinner, ...props }: LayoutProps) => {
         styles={{
           main: [
             {
+              fontFamily: "Poppins",
               selectors: {
                 ["@media (min-width: 480px)"]: {
-                  maxWidth: "600px",
+                  fontFamily:"Poppins",
+                  maxWidth: "400px",
                   background: "#FFFFFF",
                   boxShadow:
                     "0px 14px 28.8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.2)",
-                  borderRadius: "8px",
-                  maxHeight: "200px",
-                  minHeight: "100px",
+                  borderRadius: "15px",
+                  maxHeight: "300px",
+                  minHeight: "150px",
                 },
               },
             },
           ],
         }}
         dialogContentProps={{
-          title: "Share the web app",
+          title: "Share link to chat",
+          subText:"Disclaimer: Content may be subject to change. Please don’t distribute externally.",
           showCloseButton: true,
+          styles: {
+            title: {
+              fontFamily: "Poppins",
+            },
+            subText: {
+              fontFamily: "Poppins",
+            },
+          },
         }}
       >
-        <Stack horizontal verticalAlign="center" style={{ gap: "8px" }}>
+        <Stack horizontal verticalAlign="center"
+        style={{ display:"flex",justifyContent:" space-between", border:"1px solid #bdbdbd", padding: "5px", borderRadius:"30px"}}>
           <TextField
             className={styles.urlTextBox}
             defaultValue={window.location.href}
             readOnly
+            styles={{
+              fieldGroup: {
+                border: 'none',
+                background: 'none',
+              },
+              field: {
+                color: '#bdbdbd',
+              },
+            }}
           />
           <div
             className={styles.copyButtonContainer}
@@ -196,7 +219,7 @@ const Layout = ({ children,toggleSpinner, ...props }: LayoutProps) => {
               e.key === "Enter" || e.key === " " ? handleCopyClick() : null
             }
           >
-            <CopyRegular className={styles.copyButton} />
+            <LinkFilled className={styles.copyButton} />
             <span className={styles.copyButtonText}>{copyText}</span>
           </div>
         </Stack>
