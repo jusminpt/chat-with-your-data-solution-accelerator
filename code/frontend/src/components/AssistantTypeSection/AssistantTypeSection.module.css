@@ -7,12 +7,12 @@
 }
 
 .chatIcon {
-    height: 62px;
-    width: 62px;
+    height: 120px;
+    width: 120px;
 }
 
 .chatEmptyStateTitle {
-    font-family: "Segoe UI";
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
@@ -25,7 +25,7 @@
 
 .chatEmptyStateSubtitle {
     margin-top: 16px;
-    font-family: "Segoe UI";
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
     font-size: 16px;

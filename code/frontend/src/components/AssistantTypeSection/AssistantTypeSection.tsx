@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack } from "@fluentui/react";
-import Azure from "../../assets/Azure.svg";
+import KPW from "../../assets/kpw-logo.png";
 import Cards from "../../pages/chat/Cards_contract/Cards";
 import styles from "./AssistantTypeSection.module.css";
 
@@ -21,7 +21,7 @@ export const AssistantTypeSection: React.FC<AssistantTypeSectionProps> = ({
   return (
     <Stack className={styles.chatEmptyState}>
       <img
-        src={Azure}
+        src={KPW}
         className={styles.chatIcon}
         aria-hidden="true"
         alt="Chat with your data"
