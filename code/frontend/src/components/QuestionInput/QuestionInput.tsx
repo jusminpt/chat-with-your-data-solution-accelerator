@@ -37,23 +37,23 @@ export const QuestionInput = ({
 }: Props) => {
   const [question, setQuestion] = useState<string>("");
   const [liveRecognizedText, setLiveRecognizedText] = useState<string>("");
-  const [microphoneIconActive, setMicrophoneIconActive] =
-    useState<boolean>(false);
-  const [isMicrophoneDisabled, setIsMicrophoneDisabled] = useState(false);
+  // const [microphoneIconActive, setMicrophoneIconActive] =
+  //   useState<boolean>(false);
+  // const [isMicrophoneDisabled, setIsMicrophoneDisabled] = useState(false);
   const [isTextAreaDisabled, setIsTextAreaDisabled] = useState(false);
   useEffect(() => {
     if (isRecognizing) {
       setLiveRecognizedText(recognizedText);
       setIsTextAreaDisabled(true);
-      setMicrophoneIconActive(true); // Set microphone icon to active (blue)
+      //setMicrophoneIconActive(true); // Set microphone icon to active (blue)
     } else {
       setIsTextAreaDisabled(false);
-      setMicrophoneIconActive(false); // Set microphone icon to inactive
+      //setMicrophoneIconActive(false); // Set microphone icon to inactive
     }
   }, [recognizedText, isRecognizing]);
-  useEffect(() => {
-    setIsMicrophoneDisabled(isTextToSpeachActive);
-  }, [isTextToSpeachActive]);
+  // useEffect(() => {
+  // //   setIsMicrophoneDisabled(isTextToSpeachActive);
+  // // }, [isTextToSpeachActive]);
   const sendQuestion = () => {
     if (disabled || (!question.trim() && !liveRecognizedText.trim())) {
       return;
@@ -107,9 +107,11 @@ export const QuestionInput = ({
         }}
         onKeyDown={onEnterPress}
       />
+      
       <div className={styles.microphoneAndSendContainer}>
-        {/* Microphone Icon */}
-        <button
+      {/* Microphone Icon */}
+       
+        {/* <button 
           type="button"
           disabled={isMicrophoneDisabled ? true : false}
           className={styles.questionInputMicrophone}
@@ -140,7 +142,7 @@ export const QuestionInput = ({
               alt="Microphone"
             />
           )}
-        </button>
+        </button> */}
 
         {/* Send Button */}
         {isSendButtonDisabled ? (
