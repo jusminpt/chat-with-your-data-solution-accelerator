@@ -6,11 +6,11 @@ interface SpinnerComponentProps {
     loading: boolean;
     label?: string; // Label is optional
   }
-  
+
   const spinnerStyles: ISpinnerStyles = {
     label: {
       fontSize: '20px', // Increase font size to 20px
-      color: 'rgb(91 184 255)', 
+      color: 'rgb(247, 151, 46)',
       fontWeight: 600
     },
   };
@@ -18,7 +18,7 @@ interface SpinnerComponentProps {
 
   const SpinnerComponent: React.FC<SpinnerComponentProps> = ({ loading, label }) => {
     if (!loading) return null;
-  
+
     return (
       <div className={styles.overlay} data-testid="spinnerContainer">
           <Spinner label={label || undefined} size={SpinnerSize.large} styles={spinnerStyles} />
