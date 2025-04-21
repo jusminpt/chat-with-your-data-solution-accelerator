@@ -599,8 +599,8 @@ const Chat = () => {
                 style={{
                   background:
                     isGenerating || answers.length === 0
-                      ? "#BDBDBD"
-                      : "radial-gradient(109.81% 107.82% at 100.1% 90.19%, #0F6CBD 33.63%, #2D87C3 70.31%, #8DDDD8 100%)",
+                      ? "#f8f8f8"
+                      : "background: radial-gradial-gradient(109.81% 107.82% at 100.1% 90.19%, #F7972E 33.63%, #FFB86D 70.31%, #FFD9A0 100%)",
                   cursor: isGenerating || answers.length === 0 ? "" : "pointer",
                 }}
                 onClick={clearChat}
@@ -613,7 +613,7 @@ const Chat = () => {
               />
               <QuestionInput
                 clearOnSend
-                placeholder="Type a new question..."
+                placeholder="How can I assist you today?"
                 disabled={isGenerating}
                 onSend={(question) => makeApiRequest(question)}
                 recognizedText={recognizedText}
