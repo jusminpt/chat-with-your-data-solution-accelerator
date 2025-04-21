@@ -23,7 +23,7 @@
 }
 
 .citationPanelHeader {
-  font-family: "Segoe UI";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -46,7 +46,7 @@
 }
 
 .citationPanelTitle {
-  font-family: "Segoe UI";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -57,7 +57,7 @@
 }
 
 .citationPanelContent {
-  font-family: "Segoe UI";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -70,7 +70,7 @@
 }
 
 .citationPanelDisclaimer {
-  font-family: "Segoe UI";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;

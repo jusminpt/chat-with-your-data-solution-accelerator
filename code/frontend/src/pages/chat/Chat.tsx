@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Stack } from "@fluentui/react";
-import { BroomRegular, SquareRegular } from "@fluentui/react-icons";
+import { BroomRegular, SquareRegular, DeleteFilled,SquareFilled } from "@fluentui/react-icons";
 import {
   SpeechRecognizer,
   ResultReason,
@@ -582,7 +582,7 @@ const Chat = () => {
                     e.key === "Enter" || e.key === " " ? stopGenerating() : null
                   }
                 >
-                  <SquareRegular
+                  <SquareFilled
                     className={styles.stopGeneratingIcon}
                     aria-hidden="true"
                   />
@@ -594,12 +594,12 @@ const Chat = () => {
                   </span>
                 </Stack>
               )}
-              <BroomRegular
+              <DeleteFilled
                 className={`${styles.clearChatBroom} ${styles.mobileclearChatBroom}`}
                 style={{
                   background:
                     isGenerating || answers.length === 0
-                      ? "#f8f8f8"
+                      ? "#000"
                       : "background: radial-gradial-gradient(109.81% 107.82% at 100.1% 90.19%, #F7972E 33.63%, #FFB86D 70.31%, #FFD9A0 100%)",
                   cursor: isGenerating || answers.length === 0 ? "" : "pointer",
                 }}
