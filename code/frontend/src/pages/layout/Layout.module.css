@@ -55,12 +55,12 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 5px 12px;
-    gap: 8px;
-    width: 120px;
+    padding: 5px 10px;
+    gap: 4px;
+    width: auto;
     height: 40px;
-    border: .5px solid #bdbdbd;
-    border-radius: 50px;
+    /* border: .5px solid #bdbdbd; */
+    border-radius: 8px;
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -73,13 +73,30 @@ body {
 
 .layoutRightButtons {
     position: absolute;
-    right: 20px;
+    align-items: baseline;
+    right: 30px;
     gap: 1rem;
 }
 
-.shareButton {
+.historyButtonContainer{
+  width: auto;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+.historyButtonContainer:hover,.active, .historyButtonContainer:active {
+    background-color: #f8f8f8;
+    transform: scale(1.1);
+}
+
+.historyButton, .shareButton {
     color: #3c3c3c;
     font-size: 1.5em;
+    pointer-events: auto;
 }
 
 .shareButtonText {

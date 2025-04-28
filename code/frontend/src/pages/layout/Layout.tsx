@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import styles from "./Layout.module.css";
 import Azure from "../../assets/Azure.svg";
 import KPW from "../../assets/kpw-logo.png";
+import { TooltipHost } from "@fluentui/react";
 import {
   LinkFilled,
   ShareRegular,
   ShieldLockRegular,
 } from "@fluentui/react-icons";
 import { BiUpload } from "react-icons/bi";
+import { LuTextSearch } from "react-icons/lu";
 import { Dialog, Stack, TextField } from "@fluentui/react";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { HistoryButton } from "../../components/HistoryButton/HistoryButton";
@@ -88,26 +90,94 @@ const Layout = ({ children,toggleSpinner, ...props }: LayoutProps) => {
             <Link to="/" className={styles.headerTitleContainer}>
               <h3 className={styles.headerTitle}>KPW ASSISTANT</h3>
             </Link>
-            <Stack horizontal className={styles.layoutRightButtons}>
-              {!showAuthMessage && showHistoryBtn && (
+            <Stack horizontal verticalAlign="center" className={styles.layoutRightButtons}>
+              {/* {!showAuthMessage && showHistoryBtn && (
                 <HistoryButton
                   onClick={onSetShowHistoryPanel}
                   text={`${showHistoryPanel ? "Hide" : "Show"} Chat History`}
                 />
-              )}
+              )} */}
+              <TooltipHost
+                content={showHistoryPanel ? "Hide chat history" : "Show chat history"}
+                id="tooltipHistory"
+                calloutProps={{
+                  gapSpace: 0,
+                  styles: {
+                    root: {
+                      display: 'inline-block'
+                    },
+                    beak: { backgroundColor: '#242424' },
+                    beakCurtain: { background: '#242424', borderRadius: 6,},
+                    calloutMain: {
+                      backgroundColor: '#242424',
+                      padding: '5px 8px',
+                    },
+                  },
+                }}
+                tooltipProps={{
+                  styles: {
+                    content: {
+                      color: "#fff",
+                      fontFamily: 'Poppins',
+                      fontSize: "12px",
+                      fontWeight:"bold"
+                    },
+                  },
+                }}
+              >
+              <div
+                className={styles.historyButtonContainer}>
+               {!showAuthMessage && showHistoryBtn && (
+                <LuTextSearch
+                  aria-describedby="tooltipHistory"
+                  className={`${styles.historyButton} ${showHistoryPanel ? styles.active : ""}`}
+                  onClick={onSetShowHistoryPanel}
+                />
+              )}</div></TooltipHost>
+              <TooltipHost
+                content={"Share"}
+                id="tooltipShare"
+                calloutProps={{
+                  gapSpace: 0,
+                  styles: {
+                    root: {
+                      display: 'inline-block'
+                    },
+                    beak: { backgroundColor: '#242424' },
+                    beakCurtain: { background: '#242424', borderRadius: 6,},
+                    calloutMain: {
+                      backgroundColor: '#242424',
+                      padding: '5px 8px',
+                    },
+                  },
+                }}
+                tooltipProps={{
+                  styles: {
+                    content: {
+                      color: "#fff",
+                      fontFamily: 'Poppins',
+                      fontSize: "12px",
+                      fontWeight:"bold"
+                    },
+                  },
+                }}
+              >
               <div
                 className={styles.shareButtonContainer}
                 role="button"
                 tabIndex={0}
-                aria-label="Share"
+                aria-describedby="tooltipShare"
                 onClick={handleShareClick}
                 onKeyDown={(e) =>
                   e.key === "Enter" || e.key === " " ? handleShareClick() : null
                 }
               >
-                <BiUpload className={styles.shareButton} />
-                <span className={styles.shareButtonText}>Share</span>
+                <BiUpload
+                className={styles.shareButton}
+                />
+                {/* <span className={styles.shareButtonText}>Share</span> */}
               </div>
+              </TooltipHost>
             </Stack>
           </Stack>
         </div>
