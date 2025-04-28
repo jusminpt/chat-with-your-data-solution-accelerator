@@ -2,11 +2,13 @@
   height: 100%;
   overflow: hidden auto;
   max-height: 80vh;
+  font-family: 'Poppins';
 }
 
 .chatGroup {
   margin: auto 5px;
   width: 100%;
+  font-family: 'Poppins';
 }
 
 .chatMonth {
@@ -14,6 +16,7 @@
   font-weight: 600;
   margin-bottom: 5px;
   padding-left: 15px;
+  font-family: 'Poppins';
 }
 
 .chatList {
@@ -26,4 +29,5 @@
   align-items: center;
   height: 22px;
   margin-top: -8px;
+  color: coral;
 }

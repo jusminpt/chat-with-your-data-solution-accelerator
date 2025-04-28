@@ -31,6 +31,19 @@
 .questionInputSendButton {
     width: 24px;
     height: 23px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.questionInputSendButton:hover {
+    transform: scale(1.2);
+}
+
+.questionInputSendButton:active {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 80%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
 }
 
 .SendButtonDisabled{

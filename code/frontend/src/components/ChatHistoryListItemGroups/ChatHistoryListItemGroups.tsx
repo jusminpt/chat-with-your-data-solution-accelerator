@@ -136,7 +136,7 @@ export const ChatHistoryListItemGroups: React.FC<
           )
       )}
       <div role="scrollDiv" id="chatHistoryListItemObserver" ref={observerTarget} />
-      <Separator
+      {/* <Separator
         styles={{
           root: {
             width: "100%",
@@ -148,7 +148,7 @@ export const ChatHistoryListItemGroups: React.FC<
             },
           },
         }}
-      />
+      /> */}
       {Boolean(fetchingChatHistory) && (
         <div className={styles.spinnerContainer}>
           <Spinner

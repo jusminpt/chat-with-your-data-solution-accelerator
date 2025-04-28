@@ -97,6 +97,14 @@ export const ChatHistoryPanel: React.FC<ChatHistoryPanelProps> = (props) => {
     subText: !clearingError
       ? "All chat history will be permanently removed."
       : "Please try again. If the problem persists, please contact the site administrator.",
+    styles: {
+          title: {
+            fontFamily: "Poppins",
+          },
+          subText: {
+            fontFamily: "Poppins",
+          },
+        },
   };
 
   const disableClearAllChatHistory =
@@ -132,6 +140,7 @@ export const ChatHistoryPanel: React.FC<ChatHistoryPanelProps> = (props) => {
             role="heading"
             aria-level={2}
             style={{
+              fontFamily:"Poppins",
               alignSelf: "center",
               fontWeight: "600",
               fontSize: "18px",
@@ -149,7 +158,20 @@ export const ChatHistoryPanel: React.FC<ChatHistoryPanelProps> = (props) => {
               title={"Clear all chat history"}
               onClick={onShowContextualMenu}
               aria-label={"clear all chat history"}
-              styles={commandBarStyle}
+              styles={{
+                root: {
+                  color: 'black',
+                },
+                rootHovered: {
+                  color: 'black',
+                },
+                icon: {
+                  color: 'black',
+                },
+                iconHovered: {
+                  color: 'black',
+                },
+              }}
               role="button"
               id="moreButton"
             />
@@ -159,6 +181,32 @@ export const ChatHistoryPanel: React.FC<ChatHistoryPanelProps> = (props) => {
               target={"#moreButton"}
               onItemClick={toggleClearAllDialog}
               onDismiss={onHideContextualMenu}
+              styles={{
+                root: {
+                  fontFamily: "Poppins",
+                },
+                subComponentStyles: {
+                  menuItem: {
+                    root: {
+                      fontFamily: "Poppins",
+                    },
+                    icon: {
+                      color: "black",
+                      selectors: {
+                        ":hover": {
+                          color: "black",
+                        },
+                      },
+                    },
+                    iconHovered: {
+                      color: "black",
+                    },
+                    label: {
+                      fontFamily: "Poppins",
+                    },
+                  },
+                },
+              }}
             />
           </Stack>
 
@@ -169,6 +217,21 @@ export const ChatHistoryPanel: React.FC<ChatHistoryPanelProps> = (props) => {
               aria-label={"hide button"}
               role="button"
               onClick={() => setShowHistoryPanel(false)}
+              styles={{
+                root: {
+                },
+                icon: {
+                  color: "black",
+                  selectors: {
+                    ":hover": {
+                      color: "black",
+                    },
+                  },
+                },
+                iconHovered: {
+                  color: "black",
+                },
+              }}
             />
           </Stack>
         </Stack>
@@ -201,6 +264,23 @@ export const ChatHistoryPanel: React.FC<ChatHistoryPanelProps> = (props) => {
           onDismiss={clearing ? () => {} : onHideClearAllDialog}
           dialogContentProps={clearAllDialogContentProps}
           modalProps={modalProps}
+          styles={{
+            main: [
+              {
+                fontFamily: "Poppins",
+                selectors: {
+                  ["@media (min-width: 480px)"]: {
+                    fontFamily:"Poppins",
+                    maxWidth: "400px",
+                    background: "#FFFFFF",
+                    boxShadow:
+                      "0px 14px 28.8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.2)",
+                    borderRadius: "15px",
+                  },
+                },
+              },
+            ],
+          }}
         >
           <DialogFooter>
             {!clearingError && (
@@ -208,12 +288,29 @@ export const ChatHistoryPanel: React.FC<ChatHistoryPanelProps> = (props) => {
                 onClick={onClearAllChatHistory}
                 disabled={clearing}
                 text="Clear All"
+                styles={{
+                  root: { backgroundColor: '#242424',
+                          color:"#fff",
+                          borderRadius: '15px',
+                          fontFamily:"Poppins",
+                          border:"none"
+                         },
+                  rootHovered: {
+                    backgroundColor: '#393939',
+                    border:"none"
+                  }
+                }}
+
               />
             )}
             <DefaultButton
               onClick={onHideClearAllDialog}
               disabled={clearing}
               text={!clearingError ? "Cancel" : "Close"}
+              styles={{
+                root: {  borderRadius: '15px',
+                        fontFamily:"Poppins"}
+              }}
             />
           </DialogFooter>
         </Dialog>

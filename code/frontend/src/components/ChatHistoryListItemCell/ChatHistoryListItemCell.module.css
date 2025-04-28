@@ -1,6 +1,7 @@
 .container {
   max-height: calc(100vh - 100px);
   width: 300px;
+  font-family: 'Poppins';
 }
 
 .itemCell {
@@ -16,7 +17,7 @@
 }
 
 .itemCell:hover {
-  background: #e6e6e6;
+  background: #f8f8f8;
 }
 
 .itemButton {
@@ -25,19 +26,17 @@
   align-items: center;
   width: 28px;
   height: 28px;
-  border: 1px solid #d1d1d1;
-  border-radius: 5px;
-  background-color: white;
   margin: auto 2.5px;
   cursor: pointer;
 }
 
 .itemButton:hover {
-  background-color: #e6e6e6;
+  transform: scale(1.1);
+  color: black;
 }
 
 .chatTitle {
-  width: 80%;
+  width: 70%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

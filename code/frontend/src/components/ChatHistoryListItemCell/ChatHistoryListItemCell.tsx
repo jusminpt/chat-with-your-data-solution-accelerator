@@ -56,6 +56,14 @@ export const ChatHistoryListItemCell: React.FC<
     title: "Are you sure you want to delete this item?",
     closeButtonAriaLabel: "Close",
     subText: "The history of this chat session will be permanently removed.",
+    styles: {
+      title: {
+        fontFamily: "Poppins",
+      },
+      subText: {
+        fontFamily: "Poppins",
+      },
+    },
   };
 
   const modalProps = {
@@ -199,6 +207,37 @@ export const ChatHistoryListItemCell: React.FC<
                     onKeyDown={handleKeyPressEdit}
                     // errorMessage={errorRename}
                     disabled={errorRename ? true : false}
+                    styles={{
+                      root: {
+                        fontFamily: "Poppins",
+                      },
+                      fieldGroup: {
+                        borderRadius: 30,
+                        border: "1px solid rgb(189, 189, 189)",
+                        backgroundColor:"#fff",
+                        selectors: {
+                          ':hover': {
+                            borderColor: "#a0a0a0",
+                            borderRadius: 30,
+                          },
+                          ':focus-within': {
+                            borderColor: "#fff",
+                            outline: "none",
+                            boxShadow: "none",
+                          },
+                        },
+                      },
+                      field: {
+                        borderRadius: 30,
+                        fontFamily: "Poppins",
+                        selectors: {
+                          ':focus': {
+                            outline: "none",
+                            boxShadow: "none"
+                          },
+                        },
+                      },
+                    }}
                   />
                 </Stack.Item>
                 {_.trim(editTitle) && (
@@ -219,7 +258,16 @@ export const ChatHistoryListItemCell: React.FC<
                         onClick={(e) => handleSaveEdit(e)}
                         aria-label="confirm new title"
                         iconProps={{ iconName: "CheckMark" }}
-                        styles={{ root: { color: "green", marginLeft: "5px" } }}
+                        styles={{
+                          root: { color: "green", marginLeft: "5px" },
+                          icon: {
+                            fontWeight: 'bold'},
+                          rootHovered:{
+                            color: "green",
+                            transform:"scale(1.1)",
+                            backgroundColor:"none"
+                          }
+                          }}
                       />
                       <IconButton
                         role="button"
@@ -232,7 +280,16 @@ export const ChatHistoryListItemCell: React.FC<
                         onClick={() => cancelEditTitle()}
                         aria-label="cancel edit title"
                         iconProps={{ iconName: "Cancel" }}
-                        styles={{ root: { color: "red", marginLeft: "5px" } }}
+                        styles={{
+                          root: { color: "red", marginLeft: "5px" },
+                          icon: {
+                          fontWeight: 'bold'},
+                          rootHovered:{
+                            color: "red",
+                            transform:"scale(1.1)",
+                            backgroundColor:"none"
+                          }
+                        }}
                       />
                     </Stack>
                   </Stack.Item>
@@ -256,7 +313,7 @@ export const ChatHistoryListItemCell: React.FC<
         </>
       ) : (
         <>
-          <Stack horizontal verticalAlign={"center"} style={{ width: "100%" }}>
+          <Stack horizontal verticalAlign={"center"} style={{ width: "100%" , fontFamily:'Poppins'}}>
             <div className={styles.chatTitle}>{truncatedTitle}</div>
             {(isSelected || isHovered) && (
               <Stack horizontal horizontalAlign="end">
@@ -269,6 +326,10 @@ export const ChatHistoryListItemCell: React.FC<
                   onKeyDown={(e) =>
                     e.key === " " ? toggleDeleteDialog() : null
                   }
+                  styles={{
+                    root: { color: 'black' },
+                    rootHovered: { color: 'black' }
+                  }}
                 />
                 <IconButton
                   className={styles.itemButton}
@@ -277,6 +338,10 @@ export const ChatHistoryListItemCell: React.FC<
                   title="Edit"
                   onClick={onEdit}
                   onKeyDown={(e) => (e.key === " " ? onEdit() : null)}
+                  styles={{
+                    root: { color: 'black' },
+                    rootHovered: { color: 'black' }
+                  }}
                 />
               </Stack>
             )}
@@ -297,10 +362,50 @@ export const ChatHistoryListItemCell: React.FC<
         onDismiss={toggleDeleteDialog}
         dialogContentProps={dialogContentProps}
         modalProps={modalProps}
-      >
+        styles={{
+          main: [
+            {
+              fontFamily: "Poppins",
+              selectors: {
+                ["@media (min-width: 480px)"]: {
+                  fontFamily:"Poppins",
+                  maxWidth: "400px",
+                  background: "#FFFFFF",
+                  boxShadow:
+                    "0px 14px 28.8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.2)",
+                  borderRadius: "15px",
+                  maxHeight: "300px",
+                  minHeight: "150px",
+                },
+              },
+            },
+          ],
+        }}>
         <DialogFooter>
-          <PrimaryButton onClick={onDelete} text="Delete" />
-          <DefaultButton onClick={toggleDeleteDialog} text="Cancel" />
+          <PrimaryButton
+          onClick={onDelete} text="Delete"
+          styles={{
+            root: {
+              backgroundColor: '#242424',
+              color:"#fff",
+              borderRadius: '15px',
+              fontFamily:"Poppins",
+              border:"none"
+            },
+            rootHovered: {
+              backgroundColor: '#393939',
+              border:"none"
+            }
+          }}
+        />
+          <DefaultButton
+          onClick={toggleDeleteDialog} text="Cancel"
+          styles={{
+            root: {
+              borderRadius: '15px',
+              fontFamily:"Poppins"
+            },
+          }}/>
         </DialogFooter>
       </Dialog>
     </Stack>
