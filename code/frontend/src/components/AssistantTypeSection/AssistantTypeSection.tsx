@@ -20,12 +20,12 @@ export const AssistantTypeSection: React.FC<AssistantTypeSectionProps> = ({
 }) => {
   return (
     <Stack className={styles.chatEmptyState}>
-      <img
+      {/* <img
         src={KPW}
         className={styles.chatIcon}
         aria-hidden="true"
         alt="Chat with your data"
-      />
+      /> */}
       {assistantType === assistantTypes.contractAssistant ? (
         <>
           <h1 className={styles.chatEmptyStateTitle}>Contract Summarizer</h1>
